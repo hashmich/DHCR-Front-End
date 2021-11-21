@@ -94,7 +94,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', '__SALT__'),
+        'salt' => env('SECURITY_SALT', 'e85820dfaad3fbfa38baa2f700316ae713fcaf3fada4854b426947704bd25c17'),
     ],
 
     /**
@@ -322,20 +322,15 @@ return [
          */
         'test' => [
             'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => env('TEST_DB_HOST', null),
-            //'port' => 'non_standard_port_number',
-            'username' => env('DB_USER', null),
-            'password' => env('DB_PASS', null),
-            'database' => env('TEST_DB_NAME', null),
             //'encoding' => 'utf8mb4',
             'timezone' => 'UTC',
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
             'log' => false,
-            //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
-            //'url' => env('DATABASE_TEST_URL', null),
+            // //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
+            'url' => env('DATABASE_TEST_URL',
+                      env('DATABASE_URL', null)),
         ],
     ],
 
