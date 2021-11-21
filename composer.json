@@ -44,9 +44,9 @@
             "cp composer.phar ops/app/",
             "cp composer.phar api/v1/",
             "cp composer.phar api/v2/",
-            "cd ops/app/ && php composer.phar update",
-            "cd api/v1/ && php composer.phar update",
-            "cd api/v2/ && php composer.phar update"
+            "@php composer.phar --working-dir=ops/app/ update",
+            "@php composer.phar --working-dir=api/v1/ update",
+            "@php composer.phar --working-dir=api/v2/ update"
         ],
         "post-install-cmd": [
             "App\\Console\\Installer::postInstall"
@@ -58,10 +58,10 @@
             "@test",
             "@cs-check"
         ],
-        "cs-check": "phpcs --colors -p --standard=vendor/cakephp/cakephp-codesniffer/CakePHP src/ tests/",
+        "cs-check": "@php phpcs --colors -p --standard=vendor/cakephp/cakephp-codesniffer/CakePHP src/ tests/",
         "cs-fix": "phpcbf --colors --standard=vendor/cakephp/cakephp-codesniffer/CakePHP src/ tests/",
          "test": [
-            "phpunit --colors=always --configuration phpunit.xml.dist"
+            "@php phpunit --colors=always --configuration phpunit.xml.dist"
         ]
     },
     "prefer-stable": true,
