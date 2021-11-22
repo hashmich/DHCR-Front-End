@@ -17,7 +17,7 @@ test:
       if [ -z ${KUBERNETES_PORT+x} ]; then
         DB_HOST=mariadb
       else
-        DB_HOST=localhost
+        DB_HOST=127.0.0.1
       fi
     - export DATABASE_URL="mysql://${MARIADB_USER}:${MARIADB_PASSWORD}@${DB_HOST}:3306/${MARIADB_DATABASE}"
     - cp -R . /tmp/app
