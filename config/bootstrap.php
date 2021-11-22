@@ -149,12 +149,6 @@ if (!Configure::read('App.fullBaseUrl')) {
 
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
-fwrite(STDERR, "ConnectionManager::get(\"default\")=" . print_r(ConnectionManager::get("default")->config(), true));
-try {
-    fwrite(STDERR, "ConnectionManager::get(\"test\")=" . print_r(ConnectionManager::get("test")->config(), true));
-} catch (Exception $e) {
-    print("test db connection not working");
-}
 TransportFactory::setConfig(Configure::consume('EmailTransport'));
 Mailer::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
