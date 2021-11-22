@@ -149,9 +149,9 @@ if (!Configure::read('App.fullBaseUrl')) {
 
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
-print("ConnectionManager::get(\"default\")");
+print("ConnectionManager::get(\"default\")=");
 print_r(ConnectionManager::get("default")->config());
-print("ConnectionManager::get(\"test\")");
+print("ConnectionManager::get(\"test\")=");
 print_r(ConnectionManager::get("test")->config());
 TransportFactory::setConfig(Configure::consume('EmailTransport'));
 Mailer::setConfig(Configure::consume('Email'));

@@ -21,6 +21,8 @@ test:
       fi
     - export DATABASE_URL="mysql://${MARIADB_USER}:${MARIADB_PASSWORD}@${DB_HOST}:3306/${MARIADB_DATABASE}"
     - cp -R . /tmp/app
+    - echo "debug wait 300s"
+    - sleep 300
     - /bin/herokuish buildpack test
   rules:
     - if: '$TEST_DISABLED'
