@@ -7,6 +7,7 @@ test:
     MARIADB_USER: user
     MARIADB_PASSWORD: testing-password
     MARIADB_RANDOM_ROOT_PASSWORD: yes random
+    APP_MAIL_DEFAULT_FROM: dhcr-test@example.org
   services:
     - "mariadb:${MARIADB_VERSION}"
   stage: test
