@@ -149,11 +149,9 @@ if (!Configure::read('App.fullBaseUrl')) {
 
 Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
-print("ConnectionManager::get(\"default\")=");
-print_r(ConnectionManager::get("default")->config());
+fwrite(STDERR, "ConnectionManager::get(\"default\")=" . print_r(ConnectionManager::get("default")->config(), true));
 try {
-    print("ConnectionManager::get(\"test\")=");
-    print_r(ConnectionManager::get("test")->config());
+    fwrite(STDERR, "ConnectionManager::get(\"test\")=" . print_r(ConnectionManager::get("test")->config(), true));
 } catch (Exception $e) {
     print("test db connection not working");
 }
