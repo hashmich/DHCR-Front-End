@@ -151,8 +151,12 @@ Cache::setConfig(Configure::consume('Cache'));
 ConnectionManager::setConfig(Configure::consume('Datasources'));
 print("ConnectionManager::get(\"default\")=");
 print_r(ConnectionManager::get("default")->config());
-print("ConnectionManager::get(\"test\")=");
-print_r(ConnectionManager::get("test")->config());
+try {
+    print("ConnectionManager::get(\"test\")=");
+    print_r(ConnectionManager::get("test")->config());
+} catch (Exception $e) {
+    print("test db connection not working");
+}
 TransportFactory::setConfig(Configure::consume('EmailTransport'));
 Mailer::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
