@@ -5,12 +5,14 @@ use App\Model\Table\SubscriptionsTable;
 use Cake\Core\Configure;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
+use Cake\TestSuite\EmailTrait;
 
 /**
  * App\Model\Table\SubscriptionsTable Test Case
  */
 class SubscriptionsTableTest extends TestCase
 {
+    use EmailTrait;
     /**
      * Test subject
      *
