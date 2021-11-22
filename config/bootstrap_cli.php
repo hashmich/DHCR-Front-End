@@ -13,6 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 use Cake\Core\Configure;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * Additional bootstrapping and configuration for CLI environments should
