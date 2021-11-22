@@ -154,6 +154,15 @@ Mailer::setConfig(Configure::consume('Email'));
 Log::setConfig(Configure::consume('Log'));
 Security::setSalt(Configure::consume('Security.salt'));
 
+if ($isCli) {
+    fwrite(STDERR, "ConnectionManager::get(\"default\")=" . print_r(ConnectionManager::get("default")->config(), true));
+    try {
+        fwrite(STDERR, "ConnectionManager::get(\"test\")=" . print_r(ConnectionManager::get("test")->config(), true));
+    } catch (Exception $e) {
+        fwrite(STDERR, "test db connection not working");
+    }
+}
+
 /*
  * The default crypto extension in 3.0 is OpenSSL.
  * If you are migrating from 2.x uncomment this code to

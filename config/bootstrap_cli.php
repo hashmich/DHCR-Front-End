@@ -27,10 +27,3 @@ use Cake\Datasource\ConnectionManager;
 // Set logs to different files so they don't have permission conflicts.
 Configure::write('Log.debug.file', 'cli-debug');
 Configure::write('Log.error.file', 'cli-error');
-
-fwrite(STDERR, "ConnectionManager::get(\"default\")=" . print_r(ConnectionManager::get("default")->config(), true));
-try {
-    fwrite(STDERR, "ConnectionManager::get(\"test\")=" . print_r(ConnectionManager::get("test")->config(), true));
-} catch (Exception $e) {
-    fwrite(STDERR, "test db connection not working");
-}
