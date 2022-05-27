@@ -41,6 +41,7 @@
     },
     "scripts": {
         "pre-install-cmd": [
+            "git submodule update --init --recursive",
             "cp composer.phar ops/app/",
             "cp composer.phar api/v1/",
             "cp composer.phar api/v2/",
