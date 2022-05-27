@@ -1,5 +1,4 @@
 <?php
-
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -16,13 +15,10 @@
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-
 <head>
     <title><?= $this->fetch('title') ?></title>
 </head>
-
 <body>
     <?= $this->fetch('content') ?>
 </body>
-
 </html>

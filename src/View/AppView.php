@@ -1,5 +1,4 @@
 <?php
-
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,7 +11,6 @@
  * @since     3.0.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
-
 namespace App\View;
 
 use Cake\View\View;
@@ -36,9 +34,7 @@ class AppView extends View
      *
      * @return void
      */
-    public function initialize(): void
+    public function initialize() : void
     {
-        $this->loadHelper('Authentication.Identity');
-        $this->loadHelper('Paginator', ['templates' => 'paginator-templates']);
     }
 }

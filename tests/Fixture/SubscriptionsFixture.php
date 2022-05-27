@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
@@ -43,22 +42,22 @@ class SubscriptionsFixture extends TestFixture
      *
      * @return void
      */
-    public function init(): void
+    public function init() : void
     {
         $this->records = [
             [
                 'id' => 1,  // has notification on course 1
-                'email' => 'test@example.com',
+                'email' => 'Lorem ipsum dolor sit amet',
                 'online_course' => 1,
                 'confirmed' => 1,
-                'confirmation_key' => 'Loremipsumdolorsitamet',
-                'deletion_key' => 'Loremipsumdolorsitamet',
+                'confirmation_key' => 'Lorem ipsum dolor sit amet',
+                'deletion_key' => 'Lorem ipsum dolor sit amet',
                 'created' => '2020-11-23 19:17:24',
                 'updated' => '2020-11-23 19:17:24',
             ],
             [
                 'id' => 2,
-                'email' => 'test2@example.com',
+                'email' => 'Aelomen bominuskaya bomballabunga',
                 'online_course' => 0,
                 'confirmed' => 0,
                 'confirmation_key' => 'Lorem ipsum dolor sit amet',

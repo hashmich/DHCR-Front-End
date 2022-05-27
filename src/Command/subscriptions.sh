@@ -7,5 +7,5 @@ export PATH="/app/.heroku/php/bin:${PATH}"
 
 ### CAKE COMMANDS ###
 
-bin/cake subscriptions 2>&1;
+cd $CAKE_PATH && bin/cake subscriptions 2>&1;
 

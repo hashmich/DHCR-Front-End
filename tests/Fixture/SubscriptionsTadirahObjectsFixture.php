@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
@@ -39,7 +38,7 @@ class SubscriptionsTadirahObjectsFixture extends TestFixture
      *
      * @return void
      */
-    public function init(): void
+    public function init() : void
     {
         $this->records = [
             [

@@ -2,6 +2,7 @@
 
 use Cake\Core\Configure;
 ?>
+
 <div class="flex-columns">
     <div class="flex-item">
         <h3>National Moderators</h3>
@@ -13,12 +14,12 @@ use Cake\Core\Configure;
         <div class="css-columns moderators">
             <?php
             $last_country = null;
-            if (!empty($moderators)) foreach ($moderators as $i => $mod) {
-                if (empty($mod['country_id'])) continue;
-                if ($mod['country_id'] == $last_country) {
+            if(!empty($moderators)) foreach($moderators as $i => $mod) {
+                if(empty($mod['country_id'])) continue;
+                if($mod['country_id'] == $last_country) {
                     echo ',<br />';
-                } else {
-                    if ($i > 0) echo '</p></div>';
+                }else{
+                    if($i > 0) echo '</p></div>';
                     echo '<div class="item">';
                     echo '<p class="country">' . $mod['country']['name'] . '</p>';
                     echo '<p class="moderators">';
@@ -27,8 +28,8 @@ use Cake\Core\Configure;
 
                 echo $this->Html->link(
                     $mod['first_name'] . ' ' . $mod['last_name'],
-                    'mailto:' . $mod['email']
-                );
+                    'mailto:' . $mod['email']);
+
             }
             echo '</div>';
             ?>
@@ -42,26 +43,31 @@ use Cake\Core\Configure;
         <div class="css-columns admins">
             <p>
                 <?php
-                foreach ($userAdmins as $i => $mod) {
+                foreach($userAdmins as $i => $mod) {
                     echo $this->Html->link(
                         $mod['first_name'] . ' ' . $mod['last_name'],
-                        'mailto:' . $mod['email']
-                    );
+                        'mailto:' . $mod['email']);
                     echo '<br>';
                 }
                 ?>
             </p>
         </div>
+
+        <?php
+        // Hide contact form, because it does not work
+        /*
         <h3>Contact Form</h3>
         <p>
             Please use our form to automatically let the system address
             all moderators or admins in charge of your concern.
         </p>
+
         <?php
         $options = [
             'Admin Staff' => ['administrators' => 'Administrators'],
             'National Moderators' => $countries
         ];
+
         echo $this->Form->create($email, [
             'novalidate' => false,
             'id' => 'ContactUsForm',
@@ -81,8 +87,7 @@ use Cake\Core\Configure;
             'empty' => '- choose one -',
             'required' => true,
             'label' => 'Send to',
-            'options' => $options
-        ]);
+            'options' => $options]);
         echo $this->Form->control('first_name');
         echo $this->Form->control('last_name');
         echo $this->Form->control('telephone', array(
@@ -99,10 +104,17 @@ use Cake\Core\Configure;
         ));
         echo $this->Form->end();
         ?>
+        */
+        // End of hiding
+        ?>
+
         <h3>Bug Report</h3>
         <p>
             In case you find a bug, please file a report here:
         </p>
-        <a class="small blue button right" href="https://github.com/hashmich/DHCR-Frontend/issues" target="_blank">Bug Report</a>
+        <a class="small blue button right"
+           href="https://github.com/hashmich/DHCR-Frontend/issues"
+           target="_blank">Bug Report</a>
     </div>
 </div>
+

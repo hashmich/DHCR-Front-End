@@ -20,3 +20,4 @@ echo "--\n\n";
 echo "The Digital Humanities Course Registry: \n";
 // because emails are being sent from commandline, Router::baseURL would be 'localhost'!
 echo Configure::read('dhcr.baseUrl');
+?>

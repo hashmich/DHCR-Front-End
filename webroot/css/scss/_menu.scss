@@ -64,7 +64,6 @@
         align-self: start;
         justify-self: end;
         width: initial;
-        overflow-y: auto;
     }
 
     @include respond-to(x-small) {

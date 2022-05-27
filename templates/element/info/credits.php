@@ -1,6 +1,8 @@
+
 <?php
 $o = array('target' => '_blank');
 ?>
+
 <div class="flex-columns">
     <div class="flex-item wide">
         <h3>Initiative</h3>
@@ -54,11 +56,14 @@ $o = array('target' => '_blank');
             Coordination of software development, user support and maintenance of the platform.
             <a href="http://hendrikschmeer.de" target="_blank">Website</a>
         </p>
-
+        
         <h3>Screen Design</h3>
         <p>
             Lea Giesecke - <a href="https://linia-design.de/info/" target="_blank">Linia Design</a><br />
             Nicolai Herzog - <a href="http://www.nicolaiherzog.de" target="_blank">Website</a>
         </p>
+        
     </div>
 </div>
+
+

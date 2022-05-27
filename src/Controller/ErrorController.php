@@ -1,5 +1,4 @@
 <?php
-
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -13,7 +12,6 @@
  * @since         3.3.4
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
-
 namespace App\Controller;
 
 use Cake\Event\Event;
@@ -59,12 +57,12 @@ class ErrorController extends AppController
         parent::beforeRender($event);
 
         $this->viewBuilder()->setTemplatePath('Error');
-
-        if (!Configure::read('debug')) {
-            // override _serialize key as we don't want the error message to reveal application code structure (file, line)
-            $message = $url = $code = null;
-            $this->set('_serialize', ['message', 'url', 'code']);
-        }
+        
+        if(!Configure::read('debug')) {
+			// override _serialize key as we don't want the error message to reveal application code structure (file, line)
+        	$message = $url = $code = null;
+			$this->set('_serialize', ['message','url','code']);
+		}
     }
 
     /**
